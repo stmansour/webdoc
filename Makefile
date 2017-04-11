@@ -14,6 +14,8 @@ clean:
 test:
 	@echo "*** TEST completed in webdoc ***"
 
+all: clean webdoc test
+
 # Example target that you can put in your source directory
 # that contains the web service handling functions.
 # Set WEBDOC=<path to webdoc directory>
