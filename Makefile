@@ -1,11 +1,7 @@
 TOP=../..
-COUNTOL=${TOP}/tools/bashtools/countol.sh
-PKGDIR=${TOP}/tmp/rentroll
 
 webdoc: *.go
 	@touch fail
-	# @${COUNTOL} "go vet"
-	# @${COUNTOL} golint
 	go vet
 	golint
 	go build
@@ -18,18 +14,11 @@ clean:
 test:
 	@echo "*** TEST completed in webdoc ***"
 
-man:
-	nroff -man webdoc.1
-	cp webdoc.1 /usr/local/share/man/man1
-
-docs:
+# Example target that you can put in your source directory
+# that contains the web service handling functions.
+# Set WEBDOC=<path to webdoc directory>
+webdocs:
 	rm -rf doc
-	./webdoc ${TOP}/ws
-
-package: docs
-	rm -rf ${PKGDIR}/doc
-	mkdir -p ${PKGDIR}/doc
-	cp tester.html doc/
-	cp doc/*.html ${PKGDIR}/doc/
-	cp doc.css ${PKGDIR}/doc/
-	@echo "*** PACKAGE completed in webdoc ***"
+	${WEBDOC}
+	@cp ${WEBDOCDIR}/doc.css doc/
+	@cp ${WEBDOCDIR}/tester.html doc/
