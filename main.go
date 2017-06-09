@@ -217,10 +217,22 @@ func handleSynopsis(s string, d *Directive) {
 	d.D.Synopsis = strings.TrimSpace(s[len(d.Cmd):])
 }
 
+// Stripchars returns a string with the characters from chars removed
+func Stripchars(str, chars string) string {
+	return strings.Map(func(r rune) rune {
+		if !strings.ContainsRune(chars, r) {
+			return r
+		}
+		return -1
+	}, str)
+}
+
 func handleGlossaryTerms(src string) template.HTML {
+	// fmt.Printf("entered handleGlossaryTerms.  src = %s\n", src)
 	var s2 template.HTML
 	var s scanner.Scanner
 	s.Filename = "sample"
+	src = Stripchars(src, "'")
 	s.Init(strings.NewReader(src))
 	var tok rune
 	for tok != scanner.EOF {
@@ -240,6 +252,7 @@ func handleGlossaryTerms(src string) template.HTML {
 			s2 += template.HTML(" " + s.TokenText())
 		}
 	}
+	// fmt.Printf("exited handleGlossaryTerms\n")
 	return s2
 }
 
