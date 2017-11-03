@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="/js/w2ui-1.5.rc1.min.css" />
+    <link rel="stylesheet" type="text/css" href="/webclient/js/w2ui-1.5.rc1.min.css" />
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script> -->
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/w2ui-1.5.rc1.js"></script>
+    <script src="/webclient/js/jquery.min.js"></script>
+    <script src="/webclient/js/w2ui-1.5.rc1.js"></script>
     <script src="https://use.fontawesome.com/6e18d0f7c3.js"></script>
-    <link rel="icon" type="image/png" href="/html/images/favicon32x32.png">
+    <link rel="icon" type="image/png" href="/webclient/html/images/favicon32x32.png">
 </head>
 <body>
 <script type="text/javascript">
@@ -93,7 +93,7 @@ $(function () {
                           .delay(400)
                           .animate({borderColor:original_color}, 2800, 'easeOutCirc');
                     })
-                    .fail( function() { 
+                    .fail( function() {
                         console.log('Error getting /v1/uilists');
                      });
                     break;
@@ -138,7 +138,7 @@ $(function () {
 		            html: '<div style="padding: 4px 0px; font-size: 8pt;">'+
 		                  '<h2 class=>RentRoll Web Service API&nbsp;&nbsp;&nbsp;</h2>'+
 		                  '<p style="color: #777777;"><br>API Version: {{.Version}}<br>Generated: {{.Date}}</p>'+
-		                  '</div>' 
+		                  '</div>'
 		        },
                 { type: 'button', id: 'tester', text: 'Test Window', icon: 'fa fa-star' },
 
@@ -165,7 +165,7 @@ $(function () {
         name: 'sidebar',
         nodes: [
             { id: 'apis', text: 'API Calls', img: 'icon-folder', expanded: true, group: true,
-                nodes: [ 
+                nodes: [
                 {{range .TOC}}{id: '{{.ID}}', text: '{{.Title}}'},{{end}}
                 ]
             },
