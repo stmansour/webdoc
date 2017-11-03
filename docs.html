@@ -106,7 +106,7 @@ $(function () {
                     });
                     break;
                 case 'btnClose':
-                    w2ui.layout.toggle('preview', true);
+                    w2ui.layout.hide('right', true);
                     break;
             }
         },
@@ -126,7 +126,8 @@ $(function () {
             { type: 'top', size: 75, style: pstyle, content: 'top' },
             { type: 'left', size: 260, style: pstyle, content: 'left' },
             { type: 'main', style: whitebg, content: 'layout.main' },
-            { type: 'preview', size: '50%', hidden: false, resizable: true, style: whitebg, content: w2ui.testerLayout },
+            // { type: 'preview', size: '50%', hidden: false, resizable: true, style: whitebg, content: w2ui.testerLayout },
+            { type: 'right', hidden: false, size: 700, resizable: true, style: whitebg, content: w2ui.testerLayout },
         ]
     });
 
@@ -146,18 +147,21 @@ $(function () {
             onClick: function(event) {
                 switch (event.target) {
                     case 'tester':
-                        w2ui.layout.toggle('preview', true);
-                        if (App.tformRenderCount === 0) {
-                            w2ui.testerLayout.load('main', '/doc/tester.html');
-                            App.tformRenderCount++;
-                        }
+                        w2ui.layout.show('right', true);
+                        // if (App.tformRenderCount === 0) {
+                        //     w2ui.testerLayout.load('main', '/doc/tester.html');
+                        //     App.tformRenderCount++;
+                        // }
+                        w2ui.testerLayout.load('main', '/doc/tester.html');
+                        w2ui.layout.render();
+                        //w2ui.testerLayout.render();
                         var x = document.getElementById("rrHostAddr");
                         if (x !== null) {
                             x.value = window.location.origin;
                         }
                         break;
                 }
-            }
+            },
 		})
 	);
 
