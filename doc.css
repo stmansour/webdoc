@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
-@import url('http://fonts.googleapis.com/css?family=Source+Code+Pro%7CSource+Sans+Pro:400,700');
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro%7CSource+Sans+Pro:400,700');
 .glossary {
 	display: inline-block;
 	margin: 0 0 2px 0;
@@ -42,6 +42,7 @@
 	font-style: normal;
 	font-family: Roboto,sans-serif;
 	font-weight: normal;
+	font-size: 12px;
 }
 
 code {
@@ -53,19 +54,19 @@ code {
 	border-radius: 3px 3px 3px 3px;
 	color: #4411EE;
 	font-family: "Source Code Pro";
-	font-size: 14px;
+	font-size: 12px;
 	white-space: pre;
 }
 
 textarea {
 	font-family: "Source Code Pro";
-	font-size: 11pt;
+	font-size: 9pt;
 	border: 1px solid #E0E0E0;
 }
 
 .service {
 	font-family: "Source Code Pro";
-	font-size: 11pt;
+	font-size: 9pt;
 }
 
 code > code {
