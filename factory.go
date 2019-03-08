@@ -9,26 +9,26 @@ import (
 // WSTypeFactory is a map for creating new data types used by the
 // web services routines based on the supplied name.
 var WSTypeFactory = map[string]Creator{
-	"ColSort":                      NewColSort,
-	"GenSearch":                    NewGenSearch,
-	"GetRentableResponse":          NewGetRentableResponse,
-	"GLAccount":                    NewGLAccount,
-	"PrRentableOther":              NewPrRentableOther,
-	"RAPeople":                     NewRAPeople,
-	"RAPeopleResponse":             NewRAPeopleResponse,
-	"RAPets":                       NewRAPets,
-	"RAR":                          NewWSRAR,
-	"RentalAgr":                    NewRentalAgr,
-	"RentalAgreementPet":           NewRentalAgreementPet,
-	"RentalAgrSearchResponse":      NewRentalAgrSearchResponse,
-	"SearchGLAccountsResponse":     NewSearchGLAccountsResponse,
-	"SearchRentablesResponse":      NewSearchRentablesResponse,
-	"SearchTransactantsResponse":   NewSearchTransactantsResponse,
-	"SearchReceiptsResponse":       NewSearchReceiptsResponse,
-	"PrReceiptGrid":                NewPrReceiptGrid,
-	"SvcStatusResponse":            NewSvcStatusResponse,
-	"WebGridSearchRequest":         NewWebGridSearchRequest,
-	"GetRentalAgreementResponse":   NewGetRentalAgreementResponse,
+	"ColSort":             NewColSort,
+	"GenSearch":           NewGenSearch,
+	"GetRentableResponse": NewGetRentableResponse,
+	"GLAccount":           NewGLAccount,
+	"PrRentableOther":     NewPrRentableOther,
+	//"RAPeople":                     NewRAPeople,
+	//"RAPeopleResponse":             NewRAPeopleResponse,
+	//"RAPets":                       NewRAPets,
+	"RAR": NewWSRAR,
+	//"RentalAgr":                    NewRentalAgr,
+	//"RentalAgreementPet": NewRentalAgreementPet,
+	//"RentalAgrSearchResponse":      NewRentalAgrSearchResponse,
+	"SearchGLAccountsResponse":   NewSearchGLAccountsResponse,
+	"SearchRentablesResponse":    NewSearchRentablesResponse,
+	"SearchTransactantsResponse": NewSearchTransactantsResponse,
+	"SearchReceiptsResponse":     NewSearchReceiptsResponse,
+	"PrReceiptGrid":              NewPrReceiptGrid,
+	"SvcStatusResponse":          NewSvcStatusResponse,
+	"WebGridSearchRequest":       NewWebGridSearchRequest,
+	//"GetRentalAgreementResponse":   NewGetRentalAgreementResponse,
 	"SearchAssessmentsResponse":    NewSearchAssessmentsResponse,
 	"AssessmentGrid":               NewAssessmentGrid,
 	"GetAssessmentResponse":        NewGetAssessmentResponse,
@@ -178,14 +178,14 @@ func NewGetRentableResponse() interface{} {
 }
 
 // NewRAPets is a factory for RAPets structs
-func NewRAPets() interface{} {
-	return new(ws.RAPets)
-}
+//func NewRAPets() interface{} {
+//	return new(ws.RAPets)
+//}
 
 // NewRAPeopleResponse is a factory for RAPeopleResponse structs
-func NewRAPeopleResponse() interface{} {
-	return new(ws.RAPeopleResponse)
-}
+//func NewRAPeopleResponse() interface{} {
+//	return new(ws.RAPeopleResponse)
+//}
 
 // NewSearchTransactantsResponse is a factory for SearchTransactantsResponse structs
 func NewSearchTransactantsResponse() interface{} {
@@ -203,14 +203,14 @@ func NewSvcStatusResponse() interface{} {
 }
 
 // NewGetRentalAgreementResponse is a factory for GetRentalAgreementResponse structs
-func NewGetRentalAgreementResponse() interface{} {
-	return new(ws.GetRentalAgreementResponse)
-}
+//func NewGetRentalAgreementResponse() interface{} {
+//	return new(ws.GetRentalAgreementResponse)
+//}
 
 // NewRentalAgrSearchResponse is a factory for RentalAgrSearchResponse structs
-func NewRentalAgrSearchResponse() interface{} {
-	return new(ws.RentalAgrSearchResponse)
-}
+//func NewRentalAgrSearchResponse() interface{} {
+//	return new(ws.RentalAgrSearchResponse)
+//}
 
 // NewColSort is a factory for ColSort structs
 func NewColSort() interface{} {
@@ -223,9 +223,9 @@ func NewGenSearch() interface{} {
 }
 
 // NewRentalAgr is a factory for RentalAgr structs
-func NewRentalAgr() interface{} {
-	return new(ws.RentalAgr)
-}
+//func NewRentalAgr() interface{} {
+//	return new(ws.RentalAgr)
+//}
 
 // NewPrRentableOther is a factory for PrRentableOther structs
 func NewPrRentableOther() interface{} {
@@ -238,19 +238,19 @@ func NewSearchRentablesResponse() interface{} {
 }
 
 // NewRentalAgreementPet is a factory for RentalAgreementPet structs
-func NewRentalAgreementPet() interface{} {
-	return new(rlib.RentalAgreementPet)
-}
+//func NewRentalAgreementPet() interface{} {
+//	return new(rlib.RentalAgreementPet)
+//}
 
 // NewWSPets is a factory for RAPets structs
-func NewWSPets() interface{} {
-	return new(ws.RAPets)
-}
+//func NewWSPets() interface{} {
+//	return new(ws.RAPets)
+//}
 
 // NewRAPeople is a factory for RAPeople structs
-func NewRAPeople() interface{} {
-	return new(ws.RAPeople)
-}
+//func NewRAPeople() interface{} {
+//	return new(ws.RAPeople)
+//}
 
 // NewWebGridSearchRequest is a factory for WebGridSearchRequest structs
 func NewWebGridSearchRequest() interface{} {
